@@ -1,0 +1,179 @@
+fun main() {
+    println(printName("Eunice"))
+    println(printName("Senyia"))
+    println( multiply(3, 2,5))
+    println(multiply(1,0,2))
+    println(multiply(3,2,9))
+
+    greet("Eunice")
+    greet("Esther")
+
+    println(modulus(10,3))
+
+    println(sum(1,2,3,4))
+
+    interestingFact("adventure")
+
+    fact("Esther", " is an artist")
+
+    schoolname("akirachix")
+    println(myAge("Esther", 23))
+    println(myAge("Eunice",24))
+    myName("Eunice")
+    callMe("Eunice")
+    callMe("Maggy")
+
+    var fullName= arrayOf("Eunice","Musenyia", "Mutunga")
+    fullName.set(1,"Senyia")
+    println(fullName.get(1))
+    println(fullName.contentToString())
+
+
+
+    var friends= arrayOf("Esther","Emma","Maureen")
+    friends.forEach{friend->
+        println(friend)}
+    for (y in friends){
+        println(y)
+    }
+    friends.sort()
+
+
+    println(friends.contentToString())
+   println(friends.sortedArray().contentToString())
+
+    var sortedFriends= friends.sortedArray()
+    println(sortedFriends.contentToString())
+
+   brothersArray("Jann","Jack","Cornelius","Wilson")
+
+    cityArray()
+
+    numberArray()
+
+    println( classArray("Hopper Lab", "Ada lab", "Anita B").contentToString())
+
+//Object Oriented Programming
+var audi = Car ("Nissan", "Note", 0)
+    println( audi.start())
+    println(audi.accelerate(2))
+
+//    inheritance
+    var person1 = Person("Eunice", 30)
+    println( person1.talk("I am tall"))
+    person1.eat()
+
+    var banker1 = Banker("Eunice", 20)
+    println(banker1.talk("I am talking"))
+
+
+//    println(multiply(3,2,5))
+//    println(multiply(1,4,2))
+//    println( multiply(2, 4,0))
+}
+fun printName(name:String) :String{
+    var print =("Hello, my name is $name")
+    return print
+}fun multiply(num1: Int, num2: Int, num3: Int): Int{
+    var product= num1*num2
+    return product
+
+}fun greet( name: String){
+    println("hello "+ name)
+
+}fun modulus(num1: Int, num2: Int): Int{
+    var division= num1 % num2
+    return division
+} fun sum(num1: Int, num2: Int, num3: Int, num4: Int): Int{
+    var addition = num1 + num2 + num3 + num4
+    return addition
+}fun interestingFact(fact: String){
+    var fact = "I love" +  " " + fact
+    println(fact)
+}fun fact( name: String, fact: String){
+    var funFact = name + " " + fact
+    println(funFact)
+}fun schoolname(school: String){
+ println(school[0])
+    println(school[2])
+    println(school[3])
+}
+fun myAge(name: String, age: Int): String{
+    val sentence = "My name is $name and I am $age years old"
+    return sentence
+    val sentence2 = "My name is $name and I am $age years old"
+    return sentence2
+}
+fun myName(name: String){
+    println(name.length)
+}
+fun callMe(MyName: String){
+   val name = "Eunice"
+    if (name == MyName){
+        println("That's me")
+    }
+    else{
+        println("I don't know who that is")
+    }
+//}fun arrayOfNames(){
+//    var fullName= arrayOf("Eunice","Musenyia", "Mutunga")
+//    arrayOfNames.set1
+
+
+//} fun arrayOfFriends(){
+//    var friends= arrayOf("Esther","Emma","Maureen")
+//   arrayOfFriends.forEach{friend->
+//       println(friend)
+
+
+}
+fun brothersArray(bro1:String,bro2:String,bro3: String,bro4: String){
+    val brothers = arrayOf(bro1,bro2,bro3,bro4)
+    println(brothers.contentToString())
+}
+fun cityArray(){
+    val cities=  arrayOf("harare", "mumbai","dodoma","jakarta")
+    println("${cities[0].replaceFirstChar { "H" }},${cities[1].replaceFirstChar { "M" }}, ${cities[2].replaceFirstChar { "D" }}, ${cities[3].replaceFirstChar { "J" }}")
+}
+fun numberArray(){
+    var numbers = arrayOf(32, 17,4,213,78,43,90,31,3,73,11,158,62)
+    println(numbers[1] + numbers[4])
+    println(numbers.indexOf(158))
+    println(numbers.sortedArray().contentToString())
+    numbers.sort()
+    for (number in numbers){
+        println(number)
+    }
+}
+fun classArray(class1:String,class2: String,class3:String): Array<String>{
+    val classes= arrayOf(class1, class2,class3)
+    return classes
+
+}
+// Object Oriented Programming
+class Car (var make:String, var model: String,var speed: Int){
+    fun start():String{
+        return ("$make is starting")
+//        println("${make} is starting")
+    }
+    fun accelerate(accelerate:Int):Int{
+        speed = speed + accelerate
+        return speed
+    }
+}
+//Inheritance
+open class Person(var name:String, var age :Int){
+    open fun talk(words:String):String{
+
+        return words
+    }
+    fun eat(){
+        println("I am eating")
+    }
+}
+class Banker (name: String,age: Int):Person(name, age){
+    override fun talk(words: String): String {
+        return  words
+    }
+}
+
