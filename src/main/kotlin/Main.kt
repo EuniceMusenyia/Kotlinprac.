@@ -87,6 +87,17 @@ var audi = Car ("Nissan", "Note", 0)
 println(ankarapatters.tempPattern())
 
 
+
+    println(ages(14))
+    println(ages(5))
+
+    println(age(20))
+    println(age(19))
+    println(age(13))
+    numbers(arrayOf(2, 3, 6))
+
+
+
 }
 fun printName(name:String) :String{
     var print =("Hello, my name is $name")
@@ -260,6 +271,52 @@ class Ankara2(var temp:Double, var mood: Int){
         }
 
         return ("Provide the return value")
+    }
+}
+
+//Flow Control
+fun ages (age:Int): String{
+    if (age < 1){
+        return ("a baby")
+    }
+    else if (age in 2 .. 3){
+        return ("Toddler")
+    }
+    else if (age in 13 ..19) {
+        return ("teeneger")
+    }
+    else{
+        return ("adult")
+    }
+}
+
+fun age(ages:Int): String{
+    when  (ages){
+        0,2 -> return ("Child")
+        2, 12 -> return ("toddler")
+        13, 19 -> return ("teen")
+        else -> return ("adult")
+    }
+}
+
+fun numbers(numbers: Array<Int>) {
+    for (number in numbers) {
+        if (number % 2 == 0){
+            println("Even")
+        }
+        else{
+            println("Odd")
+        }
+    }
+}
+//fun names(names:Array<String>){
+//
+//}
+class Persons (var name: String, var move: String, var age: Int, var school: String){
+
+    fun intro(){
+        println("Hi, my name is $name")
+
     }
 }
 
