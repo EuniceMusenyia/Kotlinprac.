@@ -23,6 +23,8 @@ fun main() {
     callMe("Eunice")
     callMe("Maggy")
 
+
+
     var fullName= arrayOf("Eunice","Musenyia", "Mutunga")
     fullName.set(1,"Senyia")
     println(fullName.get(1))
@@ -70,6 +72,21 @@ var audi = Car ("Nissan", "Note", 0)
 //    println(multiply(3,2,5))
 //    println(multiply(1,4,2))
 //    println( multiply(2, 4,0))
+
+    var ankara = Ankara("dotted")
+    println(ankara.predictChanges(3.0,"happy"))
+
+
+        val fabricPattern = Ankaras("Dotted")
+//        fabricPattern.moods = "Happy"
+//        fabricPattern.temperatures = 5
+        println(fabricPattern.predictPattern("sad",3))
+        var ankarapatters = Ankara2(10.5,10)
+    println(ankarapatters.getmoodpattern())
+
+println(ankarapatters.tempPattern())
+
+
 }
 fun printName(name:String) :String{
     var print =("Hello, my name is $name")
@@ -174,6 +191,75 @@ open class Person(var name:String, var age :Int){
 class Banker (name: String,age: Int):Person(name, age){
     override fun talk(words: String): String {
         return  words
+    }
+}
+
+class Ankara(var design:String){
+    fun predictChanges(temperature:Double,mood:String):String{
+        var temperature= 10.0
+        for (i in 1..10){
+            if (i>5 || mood=="Sad"){
+                return " wear $design"
+            }
+            else if (i<5 || mood=="Happy"){
+                return "$design has changed to "
+            }
+            else{
+                return "The $design does not change"
+            }
+
+        }
+        return "The $design change with respect to mood and temperature of the wearer" }
+}
+
+
+class Ankaras(val pattern: String) {
+    fun predictPattern(moods:String,temperatures:Int): String {
+        if (moods == "Happy" && temperatures > 30 || temperatures<=30) {
+            return "The $pattern fabric pattern will be bright."
+        } else if (moods == "Sad" && temperatures < 10 || temperatures>=10) {
+            return "The $pattern fabric pattern will be dark."
+        } else if (moods == "Neutral" && temperatures >= 10 && temperatures <= 30) {
+            return "The $pattern fabric pattern will remain the same."
+        } else {
+            return "Unable to predict pattern changes."
+        }
+    }
+
+}
+
+class Ankara2(var temp:Double, var mood: Int){
+    fun getmoodpattern():String {
+        var mood = 10.0
+        var temp = 27.0
+        for (i in 1..10) {
+            if (mood < 5) {
+                return "wear floral patterns"
+            } else if (mood > 5 )  {
+                return "wear dark patterns"
+            } else {
+                return "wear neutral patterns"
+            }
+        }
+        return ("NO PATTERN FOUND")
+    }
+
+    fun tempPattern():String{
+        var temp= 30.0
+        for (temp in 1..10){
+            if (temp< 17.0){
+                return "wear floral patterns"
+            }
+            else if (temp <17.0){
+                return "wear dark patterns"
+            }
+            else{
+                return "wear neutral patterns"
+            }
+
+        }
+
+        return ("Provide the return value")
     }
 }
 
